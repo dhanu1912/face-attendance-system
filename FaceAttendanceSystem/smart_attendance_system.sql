@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2026 at 04:53 PM
+-- Generation Time: Mar 06, 2026 at 07:37 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -58,15 +58,16 @@ CREATE TABLE `students` (
   `password` varchar(255) NOT NULL,
   `gender` enum('Male','Female') NOT NULL,
   `photo` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `mobile` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `enrollmentno`, `name`, `password`, `gender`, `photo`, `created_at`) VALUES
-(3, '23112390194', 'Dhanashri Kalzunkar ', '$2y$10$6IFSCqfsIJmluL2Kn8rHAuG9bdxe4Q/OEb5l3Oufokpi2KqmeMQAa', 'Female', '23112390194.jpg', '2026-03-06 12:43:54');
+INSERT INTO `students` (`id`, `enrollmentno`, `name`, `password`, `gender`, `photo`, `created_at`, `mobile`) VALUES
+(5, '23112390194', 'Dhanashri Kalzunkar ', '123', 'Female', '23112390194.jpg', '2026-03-06 17:36:17', '9021509243');
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
