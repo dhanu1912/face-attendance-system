@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "db.php";
-print_r($_POST);
 
 if(isset($_POST['enrollmentno']) && isset($_POST['password'])){
 
@@ -9,13 +8,13 @@ if(isset($_POST['enrollmentno']) && isset($_POST['password'])){
     $password = $_POST['password'];
 
     $sql = "SELECT * FROM students WHERE enrollmentno='$enrollmentno'";
-    $result = $conn->query($sql);
+    $result = mysqli_query($conn,$sql);
 
-    if($result->num_rows > 0){
+    if(mysqli_num_rows($result) > 0){
 
-        $row = $result->fetch_assoc();
+        $row = mysqli_fetch_assoc($result);
 
-        if(password_verify($password, $row['password'])){
+        if($password == $row['password']){
 
             $_SESSION['enrollmentno'] = $row['enrollmentno'];
             $_SESSION['name'] = $row['name'];
@@ -23,11 +22,11 @@ if(isset($_POST['enrollmentno']) && isset($_POST['password'])){
             header("Location: dashboard.php");
             exit();
 
-        } else {
+        }else{
             echo "Wrong Password";
         }
 
-    } else {
+    }else{
         echo "User Not Found";
     }
 }

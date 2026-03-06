@@ -67,9 +67,15 @@ $created_at
 );
 
 if($insert->execute()){
-    echo "ENTRY marked successfully";
+
+    // student mobile fetch
+    $getMobile = mysqli_query($conn,"SELECT mobile,name FROM students WHERE enrollmentno='$enrollmentno'");
+    $data = mysqli_fetch_assoc($getMobile);
+
+    $mobile = $data['mobile'];
+    $name = $data['name'];
+
+    echo "ENTRY marked successfully"
 }else{
     echo "Error: ".$conn->error;
 }
-
-?>

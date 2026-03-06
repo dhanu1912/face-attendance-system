@@ -5,8 +5,9 @@ if(isset($_POST['enrollmentno'])){
 
 $enrollmentno = $_POST['enrollmentno'];
 $name = $_POST['name'];
-$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$password = $_POST['password'];
 $gender = $_POST['gender'];
+$mobile = $_POST['mobile'];   // mobile field add
 
 $photo = $enrollmentno.".jpg";
 $tmp = $_FILES['photo']['tmp_name'];
@@ -23,8 +24,8 @@ exit;
 
 move_uploaded_file($tmp,"uploads/".$photo);
 
-$sql = "INSERT INTO students(enrollmentno,name,password,gender,photo)
-VALUES('$enrollmentno','$name','$password','$gender','$photo')";
+$sql = "INSERT INTO students(enrollmentno,name,password,gender,mobile,photo)
+VALUES('$enrollmentno','$name','$password','$gender','$mobile','$photo')";
 
 if(mysqli_query($conn,$sql)){
 header("Location: register_success.html");
