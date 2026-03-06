@@ -1,0 +1,131 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Successful - Attendify</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#000428,#004e92);
+color:white;
+overflow:hidden;
+}
+
+/* glow background */
+body::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00ffff55,transparent 70%);
+top:-150px;
+left:-150px;
+animation:moveGlow 6s infinite alternate;
+z-index:-1;
+}
+
+@keyframes moveGlow{
+0%{transform:translate(0,0);}
+100%{transform:translate(200px,200px);}
+}
+
+.success-box{
+width:420px;
+padding:40px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border-radius:20px;
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+/* SVG Animation */
+
+.checkmark{
+width:120px;
+height:120px;
+margin:auto;
+display:block;
+}
+
+.checkmark circle{
+stroke:#00ff9d;
+stroke-width:6;
+fill:none;
+stroke-dasharray:314;
+stroke-dashoffset:314;
+animation:drawCircle 1s forwards;
+}
+
+.checkmark path{
+stroke:#00ff9d;
+stroke-width:6;
+fill:none;
+stroke-dasharray:100;
+stroke-dashoffset:100;
+animation:drawTick 0.6s 1s forwards;
+}
+
+/* circle draw */
+@keyframes drawCircle{
+to{
+stroke-dashoffset:0;
+}
+}
+
+/* tick draw */
+@keyframes drawTick{
+to{
+stroke-dashoffset:0;
+}
+}
+
+.success-box h2{
+color:#00ff9d;
+margin-top:20px;
+margin-bottom:10px;
+}
+
+.success-box p{
+font-size:14px;
+opacity:0.9;
+}
+</style>
+
+<script>
+setTimeout(function(){
+window.location.href="login.html";
+},3000);
+</script>
+
+</head>
+
+<body>
+
+<div class="success-box">
+
+<svg class="checkmark" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="50"/>
+<path d="M40 65 L55 80 L80 45"/>
+</svg>
+
+<h2>Registration Successful</h2>
+<p>You will be redirected to login page...</p>
+
+</div>
+
+</body>
+</html>

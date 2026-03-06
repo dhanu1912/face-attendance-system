@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About - Attendify</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background: linear-gradient(-45deg,#000428,#004e92,#0072ff,#00c6ff);
+background-size: 400% 400%;
+animation: gradient 12s ease infinite;
+color:white;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+width:85%;
+margin:auto;
+padding:50px 0;
+text-align:center;
+}
+
+h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+margin-bottom:40px;
+opacity:0.9;
+}
+
+.section{
+margin-top:60px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:25px;
+width:250px;
+border-radius:15px;
+transition:0.4s;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(0,255,255,0.6);
+}
+
+.footer{
+margin-top:80px;
+padding:30px;
+}
+
+.btn{
+padding:15px 40px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#00ffff,#0072ff);
+color:white;
+cursor:pointer;
+transition:0.4s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #00ffff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>About Smart Face Attendance System</h1>
+
+<p>
+This AI-powered system uses real-time face detection technology 
+to automatically mark attendance securely and efficiently.
+It eliminates manual errors and improves classroom monitoring.
+</p>
+
+<div class="section">
+<h2>Key Features</h2>
+<div class="cards">
+<div class="card">Face Detection</div>
+<div class="card">Real-Time Monitoring</div>
+<div class="card">Secure Login System</div>
+<div class="card">Automatic Attendance Save</div>
+<div class="card">Database Record Storage</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Technology Used</h2>
+<div class="cards">
+<div class="card">PHP</div>
+<div class="card">MySQL</div>
+<div class="card">JavaScript</div>
+<div class="card">Face-API.js</div>
+<div class="card">HTML & CSS</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Future Scope</h2>
+<p>
+Cloud integration, mobile app support, advanced face matching,
+and admin analytics dashboard for better monitoring.
+</p>
+</div>
+
+<div class="footer">
+<button class="btn" onclick="window.location.href='dashboard.php'">
+⬅ Back to Dashboard
+</button>
+</div>
+
+</div>
+
+</body>
+</html>

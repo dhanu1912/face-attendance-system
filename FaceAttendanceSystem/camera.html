@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Face Attendance</title>
+
+<script defer src="face-api.min.js"></script>
+<script defer src="camera.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#0f172a;
+color:white;
+}
+
+.container{
+padding:30px;
+background:#1e293b;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+.camera-box{
+position:relative;
+display:inline-block;
+}
+
+#video{
+width:700px;
+height:500px;
+object-fit:cover;
+border-radius:12px;
+border:2px solid #334155;
+}
+
+canvas{
+position:absolute;
+top:0;
+left:0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Face Attendance System</h2>
+
+<div class="camera-box">
+<video id="video" autoplay muted></video>
+</div>
+
+</div>
+
+</body>
+</html>

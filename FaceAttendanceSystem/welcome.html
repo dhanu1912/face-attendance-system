@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendify - Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body,html{
+            height:100%;
+            overflow:hidden;
+        }
+
+        /* GIF Background */
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: url('face-bg.gif') center center/cover no-repeat;
+    z-index:-2;
+}
+
+        /* Dark Overlay */
+        .overlay{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.7);
+            z-index:-1;
+        }
+
+        .container{
+            height:100%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            text-align:center;
+            color:white;
+        }
+
+        h1{
+    font-size:110px;
+    font-weight:800;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    background: linear-gradient(90deg,#00ffff,#0072ff,#00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+        .typing{
+            border-right:3px solid #00ffff;
+            white-space:nowrap;
+            overflow:hidden;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink{
+            50%{ border-color: transparent; }
+        }
+
+        p{
+    margin-top:30px;
+    font-size:32px;
+    font-weight:500;
+    opacity:0;
+    animation: fadeIn 3s forwards;
+    animation-delay:2s;
+}
+
+        @keyframes fadeIn{
+            to{ opacity:1; }
+        }
+
+        .btn{
+    margin-top:60px;
+    padding:22px 80px;
+    font-size:24px;
+    font-weight:600;
+    border:none;
+    border-radius:50px;
+    background: linear-gradient(90deg,#00ffff,#0072ff);
+    color:white;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 0 25px rgba(0,255,255,0.6);
+}
+
+.btn:hover{
+    transform: scale(1.15);
+    box-shadow:0 0 40px #00ffff;
+}
+
+        .btn:hover{
+            transform: scale(1.1);
+            box-shadow:0 0 20px #00ffff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Video (Place video.mp4 in same folder) -->
+    <div class="bg"></div>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <h1 class="typing" id="title"></h1>
+        <p>AI Powered Face Recognition Attendance System</p>
+        <a href="index.php">
+        <button class="btn" onclick="goNext()">Let's Start</button>
+</a>
+    </div>
+
+    <script>
+        // Typing Effect
+        const text = "Attendify";
+        let index = 0;
+
+        function typeEffect(){
+            if(index < text.length){
+                document.getElementById("title").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect,150);
+            }
+        }
+
+        typeEffect();
+
+        function goNext(){
+            window.location.assign("index.php");
+        }
+    </script>
+
+</body>
+</html>
