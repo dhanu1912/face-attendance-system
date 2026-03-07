@@ -75,7 +75,7 @@ if($insert->execute()){
     $mobile = $data['mobile'];
     $name = $data['name'];
 
-    echo "ENTRY marked successfully"
+    echo "ENTRY marked successfully";
 }else{
     echo "Error: ".$conn->error;
 }

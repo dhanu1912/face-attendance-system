@@ -112,10 +112,10 @@ input::placeholder{
 
 <input type="password" name="password" placeholder="Password" required>
 
-<select name="gender">
-<option value="Male">Male</option>
-<option value="Female">Female</option>
-</select>
+<div style="display:flex; gap:150px;">
+  <label><input type="radio" name="gender" value="Male" required> Male</label>
+  <label><input type="radio" name="gender" value="Female"> Female</label>
+</div>
 
 <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
 
