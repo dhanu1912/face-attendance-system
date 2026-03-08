@@ -92,7 +92,7 @@ box-shadow:0 0 25px #00ffff;
 <!-- Auto Redirect After 3 Seconds -->
 <script>
 setTimeout(function(){
-    window.location.href = "login.html";
+    window.location.href = "admin_login.html";
 },3000);
 </script>
 
@@ -104,7 +104,7 @@ setTimeout(function(){
 <h2>Logged Out Successfully</h2>
 <p>You have been securely logged out.</p>
 
-<button class="btn" onclick="window.location.href='login.html'">
+<button class="btn" onclick="window.location.href='admin_login.html'">
 Go to Login
 </button>
 

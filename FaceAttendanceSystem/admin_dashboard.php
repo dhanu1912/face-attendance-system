@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['enrollmentno'])){
-    header("Location: login.php");
-    exit();
+if(!isset($_SESSION['admin'])){
+header("Location: admin_login.html");
+exit;
 }
 ?>
 
@@ -132,7 +132,7 @@ box-shadow:0 0 20px #00ffff;
 <div class="logo">Attendify</div>
 
 <div class="nav-links">
-<span class="welcome">Welcome <?php echo $_SESSION['name']; ?></span>
+<span class="welcome">Welcome <?php echo $_SESSION['admin']; ?></span>
 <a href="view_records.php">View Records</a>
 <a href="about.html">About</a>
 <a href="logout.php">Logout</a>

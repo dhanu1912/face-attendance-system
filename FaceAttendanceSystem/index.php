@@ -97,7 +97,7 @@ box-shadow:0 0 20px #00ffff;
 
 <div class="nav-links">
 <a href="register.html">Register</a>
-<a href="login.html">Login</a>
+<a href="admin_login.html">Login</a>
 </div>
 </div>
 
@@ -105,7 +105,7 @@ box-shadow:0 0 20px #00ffff;
 <h1>Smart Face Attendance</h1>
 <p>AI Powered Automatic Recognition System</p>
 
-<button class="btn" onclick="window.location.href='login.html'">
+<button class="btn" onclick="window.location.href='admin_login.html'">
 Start Attendance
 </button>
 

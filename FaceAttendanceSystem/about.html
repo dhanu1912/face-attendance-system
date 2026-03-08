@@ -107,7 +107,7 @@ box-shadow:0 0 20px #00ffff;
 
 <h1>About Smart Face Attendance System</h1>
 
-<div class="speaker" onclick="readText()">🔊 Listen</div>
+<div class="speaker" onclick="readText()" ondblclick="stopText()">Listen</div>
 
 <div id="aboutText">
 
@@ -151,7 +151,7 @@ In the future, this system can be enhanced with advanced technologies such as cl
 
 </div>
 
-<button class="btn" onclick="window.location.href='dashboard.php'">
+<button class="btn" onclick="window.location.href='admin_dashboard.php'">
 ⬅ Back to Dashboard
 </button>
 
@@ -159,11 +159,13 @@ In the future, this system can be enhanced with advanced technologies such as cl
 
 <script>
 
+let speech;
+
 function readText(){
 
 let text=document.getElementById("aboutText").innerText;
 
-let speech=new SpeechSynthesisUtterance(text);
+speech=new SpeechSynthesisUtterance(text);
 
 speech.lang="en-US";
 speech.rate=1;
@@ -172,7 +174,12 @@ speechSynthesis.speak(speech);
 
 }
 
-</script>
+function stopText(){
 
+speechSynthesis.cancel();
+
+}
+
+</script>
 </body>
 </html>
